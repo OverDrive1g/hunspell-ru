@@ -26,4 +26,8 @@ RUN mkdir -p /tmp/hunspell /usr/share/hunspell \
 RUN ln -s /usr/share/hunspell/en_US.aff /usr/share/hunspell/default.aff \
   && ln -s /usr/share/hunspell/en_US.dic /usr/share/hunspell/default.dic
 
+COPY Russian*.aff /usr/share/hunspell/
+COPY Russian*.dic /usr/share/hunspell/
+RUN chmod +rwx /usr/share/hunspell/Russian*
+
 WORKDIR /workdir
